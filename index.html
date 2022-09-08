@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Integroa</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="header d-flex justify-space-between">
+      <div class="logo-container centerVH">
+        <a href=""><img src="images/logo.PNG" width="100" /></a>
+      </div>
+      <ul class="header-list unstyled-list d-flex centerVH">
+        <li class="header-list-item">
+          <i class="fa-lg fa-solid fa-clipboard-check"></i>
+        </li>
+        <li class="header-list-item">
+          <i class="fa-lg fa-solid fa-floppy-disk"></i>
+        </li>
+        <li class="header-list-item">
+          <i class="fa-lg fa-solid fa-users"></i>
+        </li>
+        <li class="header-list-item">
+          <i class="fa-lg fa-regular fa-bell"></i>
+        </li>
+        <li class="header-list-item centerVH profile-avatar">
+          <p>LA</p>
+        </li>
+      </ul>
+    </header>
+    <nav class="navbar bg-dark container d-flex">
+      <div class="menu-btn">
+        <i class="fa-solid fa-bars fa-xl"></i>
+      </div>
+      <ul class="nav-list d-flex unstyled-list">
+        <li class="nav-list-item">
+          <a class="navbar-link active" href="">Home</a>
+        </li>
+        <li class="nav-list-item dropdown-item">
+          <a href="" class="navbar-link">Configurazioni</a>
+          <ul class="dropdown-item-list bg-dark text-center unstyled-list">
+            <li class="sub-dropdown">
+              <a class="dropdown-link" href="#">Anagrafica</a>
+              <ul class="sub-dropdown-list bg-dark unstyled-list">
+                <li><a class="dropdown-link" href="#">Cespiti</a></li>
+                <li><a class="dropdown-link" href="#">Destinazioni</a></li>
+              </ul>
+            </li>
+            <li><a class="dropdown-link" href="#">Cespiti</a></li>
+            <li><a class="dropdown-link" href="#">Destinazioni</a></li>
+          </ul>
+        </li>
+        <li class="nav-list-item dropdown-item">
+          <a href="" class="navbar-link">documenti</a>
+          <ul class="dropdown-item-list bg-dark text-center unstyled-list">
+            <li>
+              <a class="dropdown-link" href="#">Anagrafica</a>
+            </li>
+            <li><a class="dropdown-link" href="#">Cespiti</a></li>
+            <li><a class="dropdown-link" href="#">Destinazioni</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-list-item">
+          <a class="navbar-link" href="">servizi postali</a>
+        </li>
+        <li class="nav-list-item">
+          <a class="navbar-link" href="">servizi idrici</a>
+        </li>
+        <li class="nav-list-item">
+          <a class="navbar-link" href="">servizi digitali</a>
+        </li>
+        <li class="nav-list-item">
+          <a class="navbar-link" href="">gestione</a>
+        </li>
+        <li class="nav-list-item">
+          <a class="navbar-link" href="">controllo</a>
+        </li>
+        <li class="nav-list-item">
+          <a class="navbar-link" href="">commerciale</a>
+        </li>
+        <li class="nav-list-item">
+          <a class="navbar-link" href="">supporto</a>
+        </li>
+      </ul>
+      <div class="close-btn">
+        <i class="fa-solid fa-circle-xmark fa-2xl"></i>
+      </div>
+    </nav>
+    <nav class="sub-nav container">
+      <ul class="sub-nav-list d-flex unstyled-list">
+        <li class="list-item d-flex align-items-center">
+          <a class="active" href="#">Preventivi</a>
+        </li>
+        <li class="list-item d-flex align-items-center">
+          <a href="#">capienze</a>
+        </li>
+        <li class="list-item d-flex align-items-center">
+          <a href="#">listini</a>
+        </li>
+        <li class="list-item d-flex align-items-center">
+          <a href="#">agenti</a>
+        </li>
+        <li class="list-item d-flex align-items-center"><a href="#">CRM</a></li>
+      </ul>
+    </nav>
+    <div class="filter-control">
+      <div class="container d-flex justify-space-between my-2">
+        <button class="btn-primary filter-btn">Filtra</button>
+        <button class="btn-primary add-btn">
+          <a href="requestForm.html"
+            ><span class="add-icon bg-dark"><i class="lni lni-plus"></i></span>
+            Nuovo preventivo</a
+          >
+        </button>
+      </div>
+      <div class="hr-container">
+        <hr />
+      </div>
+    </div>
+    <!-- Starting table -->
+    <div class="table-container">
+      <table class="details-table">
+        <thead>
+          <tr>
+            <th>azioni</th>
+            <th>numero preventivo</th>
+            <th>agenzia</th>
+            <th>cliente</th>
+            <th>state</th>
+            <th>creato da</th>
+            <th>agente</th>
+            <th>data creazione</th>
+            <th>approva da</th>
+            <th>data approvazione</th>
+            <th>allegati</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="icon-cell">
+              <button class="icon-cell-btn centerVH">
+                <!-- <i class=" lni lni-line-dotted"></i> -->
+                <i
+                  class="fa-regular centerVH dotted-icon bg-dark fa-md fa-ellipsis"
+                ></i>
+              </button>
+              <div class="dropdown">
+                <div class="list-header">
+                  <h2 class="opacity-30 fs-1">Altre opzioni</h2>
+                </div>
+                <hr />
+                <ul class="unstyled-list remove-scroll">
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                </ul>
+              </div>
+            </td>
+            <td>PR-52332656653</td>
+            <td>sogert s.p.a.</td>
+            <td>comune di Napoli</td>
+            <td class="state-cell">
+              <button
+                class="btn-primary state-dropdown-btn d-flex align-items-center"
+              >
+                In attesa <i class="fa-solid fa-caret-down"></i>
+              </button>
+              <ul class="unstyled-list state-dropdown-list">
+                <li class="list-header">Stati</li>
+                <hr />
+                <li><button data-color="#f2de31">In attesa</button></li>
+                <li>
+                  <button data-color="#50b957">Approva de repsonsible</button>
+                </li>
+                <li>
+                  <button data-color="#f45564">
+                    Rigettato da responsablie
+                  </button>
+                </li>
+                <li>
+                  <button data-color="#008dcb">Inviato al celiente</button>
+                </li>
+                <li>
+                  <button data-color="#31a339">Approvato da cliente</button>
+                </li>
+                <li>
+                  <button data-color="#eb1a2d">Rigettato da cliente</button>
+                </li>
+              </ul>
+            </td>
+            <td><span>Mario Rossi</span></td>
+            <td>Mario Bianchi</td>
+            <td>23/03/2022</td>
+            <td>non approvato</td>
+            <td>-</td>
+            <td>
+              <button class="btn-primary attatch-btn">Allegati</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="icon-cell">
+              <button class="icon-cell-btn centerVH">
+                <i
+                  class="fa-regular centerVH dotted-icon bg-dark fa-md fa-ellipsis"
+                ></i>
+              </button>
+              <div class="dropdown">
+                <div class="list-header">
+                  <h2 class="opacity-30 fs-1">Altre opzioni</h2>
+                </div>
+                <hr />
+                <ul class="unstyled-list remove-scroll">
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                </ul>
+              </div>
+            </td>
+            <td>PR-52332656653</td>
+            <td>sogert s.p.a.</td>
+            <td>comune di Napoli</td>
+            <td class="state-cell">
+              <button
+                class="btn-primary state-dropdown-btn d-flex align-items-center"
+              >
+                In attesa <i class="fa-solid fa-caret-down"></i>
+              </button>
+              <ul class="unstyled-list state-dropdown-list">
+                <li class="list-header">Stati</li>
+                <hr />
+                <li><button data-color="#f2de31">In attesa</button></li>
+                <li>
+                  <button data-color="#50b957">Approva de repsonsible</button>
+                </li>
+                <li>
+                  <button data-color="#f45564">
+                    Rigettato da responsablie
+                  </button>
+                </li>
+                <li>
+                  <button data-color="#008dcb">Inviato al celiente</button>
+                </li>
+                <li>
+                  <button data-color="#31a339">Approvato da cliente</button>
+                </li>
+                <li>
+                  <button data-color="#eb1a2d">Rigettato da cliente</button>
+                </li>
+              </ul>
+            </td>
+            <td><span>Mario Rossi</span></td>
+            <td>Mario Bianchi</td>
+            <td>23/03/2022</td>
+            <td>non approvato</td>
+            <td>-</td>
+            <td>
+              <button class="btn-primary attatch-btn">Allegati</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="icon-cell">
+              <button class="icon-cell-btn centerVH">
+                <i
+                  class="fa-regular centerVH dotted-icon bg-dark fa-md fa-ellipsis"
+                ></i>
+              </button>
+              <div class="dropdown">
+                <div class="list-header">
+                  <h2 class="opacity-30 fs-1">Altre opzioni</h2>
+                </div>
+                <hr />
+                <ul class="unstyled-list remove-scroll">
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                </ul>
+              </div>
+            </td>
+            <td>PR-52332656653</td>
+            <td>sogert s.p.a.</td>
+            <td>comune di Napoli</td>
+            <td class="state-cell">
+              <button
+                class="btn-primary state-dropdown-btn d-flex align-items-center"
+              >
+                In attesa <i class="fa-solid fa-caret-down"></i>
+              </button>
+              <ul class="unstyled-list state-dropdown-list">
+                <li class="list-header">Stati</li>
+                <hr />
+                <li><button data-color="#f2de31">In attesa</button></li>
+                <li>
+                  <button data-color="#50b957">Approva de repsonsible</button>
+                </li>
+                <li>
+                  <button data-color="#f45564">
+                    Rigettato da responsablie
+                  </button>
+                </li>
+                <li>
+                  <button data-color="#008dcb">Inviato al celiente</button>
+                </li>
+                <li>
+                  <button data-color="#31a339">Approvato da cliente</button>
+                </li>
+                <li>
+                  <button data-color="#eb1a2d">Rigettato da cliente</button>
+                </li>
+              </ul>
+            </td>
+            <td><span>Mario Rossi</span></td>
+            <td>Mario Bianchi</td>
+            <td>23/03/2022</td>
+            <td>non approvato</td>
+            <td>-</td>
+            <td>
+              <button class="btn-primary attatch-btn">Allegati</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="icon-cell">
+              <button class="icon-cell-btn centerVH">
+                <i
+                  class="fa-regular centerVH dotted-icon bg-dark fa-md fa-ellipsis"
+                ></i>
+              </button>
+              <div class="dropdown">
+                <div class="list-header">
+                  <h2 class="opacity-30 fs-1">Altre opzioni</h2>
+                </div>
+                <hr />
+                <ul class="unstyled-list remove-scroll">
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                </ul>
+              </div>
+            </td>
+            <td>PR-52332656653</td>
+            <td>sogert s.p.a.</td>
+            <td>comune di Napoli</td>
+            <td class="state-cell">
+              <button
+                class="btn-primary state-dropdown-btn d-flex align-items-center"
+              >
+                In attesa <i class="fa-solid fa-caret-down"></i>
+              </button>
+              <ul class="unstyled-list state-dropdown-list">
+                <li class="list-header">Stati</li>
+                <hr />
+                <li><button data-color="#f2de31">In attesa</button></li>
+                <li>
+                  <button data-color="#50b957">Approva de repsonsible</button>
+                </li>
+                <li>
+                  <button data-color="#f45564">
+                    Rigettato da responsablie
+                  </button>
+                </li>
+                <li>
+                  <button data-color="#008dcb">Inviato al celiente</button>
+                </li>
+                <li>
+                  <button data-color="#31a339">Approvato da cliente</button>
+                </li>
+                <li>
+                  <button data-color="#eb1a2d">Rigettato da cliente</button>
+                </li>
+              </ul>
+            </td>
+            <td><span>Mario Rossi</span></td>
+            <td>Mario Bianchi</td>
+            <td>23/03/2022</td>
+            <td>non approvato</td>
+            <td>-</td>
+            <td>
+              <button class="btn-primary attatch-btn">Allegati</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="icon-cell">
+              <button class="icon-cell-btn centerVH">
+                <i
+                  class="fa-regular centerVH dotted-icon bg-dark fa-md fa-ellipsis"
+                ></i>
+              </button>
+              <div class="dropdown">
+                <div class="list-header">
+                  <h2 class="opacity-30 fs-1">Altre opzioni</h2>
+                </div>
+                <hr />
+                <ul class="unstyled-list remove-scroll">
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                </ul>
+              </div>
+            </td>
+            <td>PR-52332656653</td>
+            <td>sogert s.p.a.</td>
+            <td>comune di Napoli</td>
+            <td class="state-cell">
+              <button
+                class="btn-primary state-dropdown-btn d-flex align-items-center"
+              >
+                In attesa <i class="fa-solid fa-caret-down"></i>
+              </button>
+              <ul class="unstyled-list state-dropdown-list">
+                <li class="list-header">Stati</li>
+                <hr />
+                <li><button data-color="#f2de31">In attesa</button></li>
+                <li>
+                  <button data-color="#50b957">Approva de repsonsible</button>
+                </li>
+                <li>
+                  <button data-color="#f45564">
+                    Rigettato da responsablie
+                  </button>
+                </li>
+                <li>
+                  <button data-color="#008dcb">Inviato al celiente</button>
+                </li>
+                <li>
+                  <button data-color="#31a339">Approvato da cliente</button>
+                </li>
+                <li>
+                  <button data-color="#eb1a2d">Rigettato da cliente</button>
+                </li>
+              </ul>
+            </td>
+            <td><span>Mario Rossi</span></td>
+            <td>Mario Bianchi</td>
+            <td>23/03/2022</td>
+            <td>non approvato</td>
+            <td>-</td>
+            <td>
+              <button class="btn-primary attatch-btn">Allegati</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="icon-cell">
+              <button class="icon-cell-btn centerVH">
+                <i
+                  class="fa-regular centerVH dotted-icon bg-dark fa-md fa-ellipsis"
+                ></i>
+              </button>
+              <div class="dropdown">
+                <div class="list-header">
+                  <h2 class="opacity-30 fs-1">Altre opzioni</h2>
+                </div>
+                <hr />
+                <ul class="unstyled-list remove-scroll">
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                </ul>
+              </div>
+            </td>
+            <td>PR-52332656653</td>
+            <td>sogert s.p.a.</td>
+            <td>comune di Napoli</td>
+            <td class="state-cell">
+              <button
+                class="btn-primary state-dropdown-btn d-flex align-items-center"
+              >
+                In attesa <i class="fa-solid fa-caret-down"></i>
+              </button>
+              <ul class="unstyled-list state-dropdown-list">
+                <li class="list-header">Stati</li>
+                <hr />
+                <li><button data-color="#f2de31">In attesa</button></li>
+                <li>
+                  <button data-color="#50b957">Approva de repsonsible</button>
+                </li>
+                <li>
+                  <button data-color="#f45564">
+                    Rigettato da responsablie
+                  </button>
+                </li>
+                <li>
+                  <button data-color="#008dcb">Inviato al celiente</button>
+                </li>
+                <li>
+                  <button data-color="#31a339">Approvato da cliente</button>
+                </li>
+                <li>
+                  <button data-color="#eb1a2d">Rigettato da cliente</button>
+                </li>
+              </ul>
+            </td>
+            <td><span>Mario Rossi</span></td>
+            <td>Mario Bianchi</td>
+            <td>23/03/2022</td>
+            <td>non approvato</td>
+            <td>-</td>
+            <td>
+              <button class="btn-primary attatch-btn">Allegati</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="icon-cell">
+              <button class="icon-cell-btn centerVH">
+                <i
+                  class="fa-regular centerVH dotted-icon bg-dark fa-md fa-ellipsis"
+                ></i>
+              </button>
+              <div class="dropdown">
+                <div class="list-header">
+                  <h2 class="opacity-30 fs-1">Altre opzioni</h2>
+                </div>
+                <hr />
+                <ul class="unstyled-list remove-scroll">
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                </ul>
+              </div>
+            </td>
+            <td>PR-52332656653</td>
+            <td>sogert s.p.a.</td>
+            <td>comune di Napoli</td>
+            <td class="state-cell">
+              <button
+                class="btn-primary state-dropdown-btn d-flex align-items-center"
+              >
+                In attesa <i class="fa-solid fa-caret-down"></i>
+              </button>
+              <ul class="unstyled-list state-dropdown-list">
+                <li class="list-header">Stati</li>
+                <hr />
+                <li><button data-color="#f2de31">In attesa</button></li>
+                <li>
+                  <button data-color="#50b957">Approva de repsonsible</button>
+                </li>
+                <li>
+                  <button data-color="#f45564">
+                    Rigettato da responsablie
+                  </button>
+                </li>
+                <li>
+                  <button data-color="#008dcb">Inviato al celiente</button>
+                </li>
+                <li>
+                  <button data-color="#31a339">Approvato da cliente</button>
+                </li>
+                <li>
+                  <button data-color="#eb1a2d">Rigettato da cliente</button>
+                </li>
+              </ul>
+            </td>
+            <td><span>Mario Rossi</span></td>
+            <td>Mario Bianchi</td>
+            <td>23/03/2022</td>
+            <td>non approvato</td>
+            <td>-</td>
+            <td>
+              <button class="btn-primary attatch-btn">Allegati</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="icon-cell">
+              <button class="icon-cell-btn centerVH">
+                <i
+                  class="fa-regular centerVH dotted-icon bg-dark fa-md fa-ellipsis"
+                ></i>
+              </button>
+              <div class="dropdown">
+                <div class="list-header">
+                  <h2 class="opacity-30 fs-1">Altre opzioni</h2>
+                </div>
+                <hr />
+                <ul class="unstyled-list remove-scroll">
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                </ul>
+              </div>
+            </td>
+            <td>PR-52332656653</td>
+            <td>sogert s.p.a.</td>
+            <td>comune di Napoli</td>
+            <td class="state-cell">
+              <button
+                class="btn-primary state-dropdown-btn d-flex align-items-center"
+              >
+                In attesa <i class="fa-solid fa-caret-down"></i>
+              </button>
+              <ul class="unstyled-list state-dropdown-list">
+                <li class="list-header">Stati</li>
+                <hr />
+                <li><button data-color="#f2de31">In attesa</button></li>
+                <li>
+                  <button data-color="#50b957">Approva de repsonsible</button>
+                </li>
+                <li>
+                  <button data-color="#f45564">
+                    Rigettato da responsablie
+                  </button>
+                </li>
+                <li>
+                  <button data-color="#008dcb">Inviato al celiente</button>
+                </li>
+                <li>
+                  <button data-color="#31a339">Approvato da cliente</button>
+                </li>
+                <li>
+                  <button data-color="#eb1a2d">Rigettato da cliente</button>
+                </li>
+              </ul>
+            </td>
+            <td><span>Mario Rossi</span></td>
+            <td>Mario Bianchi</td>
+            <td>23/03/2022</td>
+            <td>non approvato</td>
+            <td>-</td>
+            <td>
+              <button class="btn-primary attatch-btn">Allegati</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="icon-cell">
+              <button class="icon-cell-btn centerVH">
+                <i
+                  class="fa-regular centerVH dotted-icon bg-dark fa-md fa-ellipsis"
+                ></i>
+              </button>
+              <div class="dropdown">
+                <div class="list-header">
+                  <h2 class="opacity-30 fs-1">Altre opzioni</h2>
+                </div>
+                <hr />
+                <ul class="unstyled-list remove-scroll">
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                </ul>
+              </div>
+            </td>
+            <td>PR-52332656653</td>
+            <td>sogert s.p.a.</td>
+            <td>comune di Napoli</td>
+            <td class="state-cell">
+              <button
+                class="btn-primary state-dropdown-btn d-flex align-items-center"
+              >
+                In attesa <i class="fa-solid fa-caret-down"></i>
+              </button>
+              <ul class="unstyled-list state-dropdown-list">
+                <li class="list-header">Stati</li>
+                <hr />
+                <li><button data-color="#f2de31">In attesa</button></li>
+                <li>
+                  <button data-color="#50b957">Approva de repsonsible</button>
+                </li>
+                <li>
+                  <button data-color="#f45564">
+                    Rigettato da responsablie
+                  </button>
+                </li>
+                <li>
+                  <button data-color="#008dcb">Inviato al celiente</button>
+                </li>
+                <li>
+                  <button data-color="#31a339">Approvato da cliente</button>
+                </li>
+                <li>
+                  <button data-color="#eb1a2d">Rigettato da cliente</button>
+                </li>
+              </ul>
+            </td>
+            <td><span>Mario Rossi</span></td>
+            <td>Mario Bianchi</td>
+            <td>23/03/2022</td>
+            <td>non approvato</td>
+            <td>-</td>
+            <td>
+              <button class="btn-primary attatch-btn">Allegati</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="icon-cell">
+              <button class="icon-cell-btn centerVH">
+                <i
+                  class="fa-regular centerVH dotted-icon bg-dark fa-md fa-ellipsis"
+                ></i>
+              </button>
+              <div class="dropdown">
+                <div class="list-header">
+                  <h2 class="opacity-30 fs-1">Altre opzioni</h2>
+                </div>
+                <hr />
+                <ul class="unstyled-list remove-scroll">
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                </ul>
+              </div>
+            </td>
+            <td>PR-52332656653</td>
+            <td>sogert s.p.a.</td>
+            <td>comune di Napoli</td>
+            <td class="state-cell">
+              <button
+                class="btn-primary state-dropdown-btn d-flex align-items-center"
+              >
+                In attesa <i class="fa-solid fa-caret-down"></i>
+              </button>
+              <ul class="unstyled-list state-dropdown-list">
+                <li class="list-header">Stati</li>
+                <hr />
+                <li><button data-color="#f2de31">In attesa</button></li>
+                <li>
+                  <button data-color="#50b957">Approva de repsonsible</button>
+                </li>
+                <li>
+                  <button data-color="#f45564">
+                    Rigettato da responsablie
+                  </button>
+                </li>
+                <li>
+                  <button data-color="#008dcb">Inviato al celiente</button>
+                </li>
+                <li>
+                  <button data-color="#31a339">Approvato da cliente</button>
+                </li>
+                <li>
+                  <button data-color="#eb1a2d">Rigettato da cliente</button>
+                </li>
+              </ul>
+            </td>
+            <td><span>Mario Rossi</span></td>
+            <td>Mario Bianchi</td>
+            <td>23/03/2022</td>
+            <td>non approvato</td>
+            <td>-</td>
+            <td>
+              <button class="btn-primary attatch-btn">Allegati</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="icon-cell">
+              <button class="icon-cell-btn centerVH">
+                <i
+                  class="fa-regular centerVH dotted-icon bg-dark fa-md fa-ellipsis"
+                ></i>
+              </button>
+              <div class="dropdown">
+                <div class="list-header">
+                  <h2 class="opacity-30 fs-1">Altre opzioni</h2>
+                </div>
+                <hr />
+                <ul class="unstyled-list remove-scroll">
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                </ul>
+              </div>
+            </td>
+            <td>PR-52332656653</td>
+            <td>sogert s.p.a.</td>
+            <td>comune di Napoli</td>
+            <td class="state-cell">
+              <button
+                class="btn-primary state-dropdown-btn d-flex align-items-center"
+              >
+                In attesa <i class="fa-solid fa-caret-down"></i>
+              </button>
+              <ul class="unstyled-list state-dropdown-list">
+                <li class="list-header">Stati</li>
+                <hr />
+                <li><button data-color="#f2de31">In attesa</button></li>
+                <li>
+                  <button data-color="#50b957">Approva de repsonsible</button>
+                </li>
+                <li>
+                  <button data-color="#f45564">
+                    Rigettato da responsablie
+                  </button>
+                </li>
+                <li>
+                  <button data-color="#008dcb">Inviato al celiente</button>
+                </li>
+                <li>
+                  <button data-color="#31a339">Approvato da cliente</button>
+                </li>
+                <li>
+                  <button data-color="#eb1a2d">Rigettato da cliente</button>
+                </li>
+              </ul>
+            </td>
+            <td><span>Mario Rossi</span></td>
+            <td>Mario Bianchi</td>
+            <td>23/03/2022</td>
+            <td>non approvato</td>
+            <td>-</td>
+            <td>
+              <button class="btn-primary attatch-btn">Allegati</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="icon-cell">
+              <button class="icon-cell-btn centerVH">
+                <i
+                  class="fa-regular centerVH dotted-icon bg-dark fa-md fa-ellipsis"
+                ></i>
+              </button>
+              <div class="dropdown">
+                <div class="list-header">
+                  <h2 class="opacity-30 fs-1">Altre opzioni</h2>
+                </div>
+                <hr />
+                <ul class="unstyled-list remove-scroll">
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                </ul>
+              </div>
+            </td>
+            <td>PR-52332656653</td>
+            <td>sogert s.p.a.</td>
+            <td>comune di Napoli</td>
+            <td class="state-cell">
+              <button
+                class="btn-primary state-dropdown-btn d-flex align-items-center"
+              >
+                In attesa <i class="fa-solid fa-caret-down"></i>
+              </button>
+              <ul class="unstyled-list state-dropdown-list">
+                <li class="list-header">Stati</li>
+                <hr />
+                <li><button data-color="#f2de31">In attesa</button></li>
+                <li>
+                  <button data-color="#50b957">Approva de repsonsible</button>
+                </li>
+                <li>
+                  <button data-color="#f45564">
+                    Rigettato da responsablie
+                  </button>
+                </li>
+                <li>
+                  <button data-color="#008dcb">Inviato al celiente</button>
+                </li>
+                <li>
+                  <button data-color="#31a339">Approvato da cliente</button>
+                </li>
+                <li>
+                  <button data-color="#eb1a2d">Rigettato da cliente</button>
+                </li>
+              </ul>
+            </td>
+            <td><span>Mario Rossi</span></td>
+            <td>Mario Bianchi</td>
+            <td>23/03/2022</td>
+            <td>non approvato</td>
+            <td>-</td>
+            <td>
+              <button class="btn-primary attatch-btn">Allegati</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="icon-cell">
+              <button class="icon-cell-btn centerVH">
+                <i
+                  class="fa-regular centerVH dotted-icon bg-dark fa-md fa-ellipsis"
+                ></i>
+              </button>
+              <div class="dropdown">
+                <div class="list-header">
+                  <h2 class="opacity-30 fs-1">Altre opzioni</h2>
+                </div>
+                <hr />
+                <ul class="unstyled-list remove-scroll">
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                </ul>
+              </div>
+            </td>
+            <td>PR-52332656653</td>
+            <td>sogert s.p.a.</td>
+            <td>comune di Napoli</td>
+            <td class="state-cell">
+              <button
+                class="btn-primary state-dropdown-btn d-flex align-items-center"
+              >
+                In attesa <i class="fa-solid fa-caret-down"></i>
+              </button>
+              <ul class="unstyled-list state-dropdown-list">
+                <li class="list-header">Stati</li>
+                <hr />
+                <li><button data-color="#f2de31">In attesa</button></li>
+                <li>
+                  <button data-color="#50b957">Approva de repsonsible</button>
+                </li>
+                <li>
+                  <button data-color="#f45564">
+                    Rigettato da responsablie
+                  </button>
+                </li>
+                <li>
+                  <button data-color="#008dcb">Inviato al celiente</button>
+                </li>
+                <li>
+                  <button data-color="#31a339">Approvato da cliente</button>
+                </li>
+                <li>
+                  <button data-color="#eb1a2d">Rigettato da cliente</button>
+                </li>
+              </ul>
+            </td>
+            <td><span>Mario Rossi</span></td>
+            <td>Mario Bianchi</td>
+            <td>23/03/2022</td>
+            <td>non approvato</td>
+            <td>-</td>
+            <td>
+              <button class="btn-primary attatch-btn">Allegati</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="icon-cell">
+              <button class="icon-cell-btn centerVH">
+                <i
+                  class="fa-regular centerVH dotted-icon bg-dark fa-md fa-ellipsis"
+                ></i>
+              </button>
+              <div class="dropdown">
+                <div class="list-header">
+                  <h2 class="opacity-30 fs-1">Altre opzioni</h2>
+                </div>
+                <hr />
+                <ul class="unstyled-list remove-scroll">
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                </ul>
+              </div>
+            </td>
+            <td>PR-52332656653</td>
+            <td>sogert s.p.a.</td>
+            <td>comune di Napoli</td>
+            <td class="state-cell">
+              <button
+                class="btn-primary state-dropdown-btn d-flex align-items-center"
+              >
+                In attesa <i class="fa-solid fa-caret-down"></i>
+              </button>
+              <ul class="unstyled-list state-dropdown-list">
+                <li class="list-header">Stati</li>
+                <hr />
+                <li><button data-color="#f2de31">In attesa</button></li>
+                <li>
+                  <button data-color="#50b957">Approva de repsonsible</button>
+                </li>
+                <li>
+                  <button data-color="#f45564">
+                    Rigettato da responsablie
+                  </button>
+                </li>
+                <li>
+                  <button data-color="#008dcb">Inviato al celiente</button>
+                </li>
+                <li>
+                  <button data-color="#31a339">Approvato da cliente</button>
+                </li>
+                <li>
+                  <button data-color="#eb1a2d">Rigettato da cliente</button>
+                </li>
+              </ul>
+            </td>
+            <td><span>Mario Rossi</span></td>
+            <td>Mario Bianchi</td>
+            <td>23/03/2022</td>
+            <td>non approvato</td>
+            <td>-</td>
+            <td>
+              <button class="btn-primary attatch-btn">Allegati</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="icon-cell">
+              <button class="icon-cell-btn centerVH">
+                <i
+                  class="fa-regular centerVH dotted-icon bg-dark fa-md fa-ellipsis"
+                ></i>
+              </button>
+              <div class="dropdown">
+                <div class="list-header">
+                  <h2 class="opacity-30 fs-1">Altre opzioni</h2>
+                </div>
+                <hr />
+                <ul class="unstyled-list remove-scroll">
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                </ul>
+              </div>
+            </td>
+            <td>PR-52332656653</td>
+            <td>sogert s.p.a.</td>
+            <td>comune di Napoli</td>
+            <td class="state-cell">
+              <button
+                class="btn-primary state-dropdown-btn d-flex align-items-center"
+              >
+                In attesa <i class="fa-solid fa-caret-down"></i>
+              </button>
+              <ul class="unstyled-list state-dropdown-list">
+                <li class="list-header">Stati</li>
+                <hr />
+                <li><button data-color="#f2de31">In attesa</button></li>
+                <li>
+                  <button data-color="#50b957">Approva de repsonsible</button>
+                </li>
+                <li>
+                  <button data-color="#f45564">
+                    Rigettato da responsablie
+                  </button>
+                </li>
+                <li>
+                  <button data-color="#008dcb">Inviato al celiente</button>
+                </li>
+                <li>
+                  <button data-color="#31a339">Approvato da cliente</button>
+                </li>
+                <li>
+                  <button data-color="#eb1a2d">Rigettato da cliente</button>
+                </li>
+              </ul>
+            </td>
+            <td><span>Mario Rossi</span></td>
+            <td>Mario Bianchi</td>
+            <td>23/03/2022</td>
+            <td>non approvato</td>
+            <td>-</td>
+            <td>
+              <button class="btn-primary attatch-btn">Allegati</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="icon-cell">
+              <button class="icon-cell-btn centerVH">
+                <i
+                  class="fa-regular centerVH dotted-icon bg-dark fa-md fa-ellipsis"
+                ></i>
+              </button>
+              <div class="dropdown">
+                <div class="list-header">
+                  <h2 class="opacity-30 fs-1">Altre opzioni</h2>
+                </div>
+                <hr />
+                <ul class="unstyled-list remove-scroll">
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                </ul>
+              </div>
+            </td>
+            <td>PR-52332656653</td>
+            <td>sogert s.p.a.</td>
+            <td>comune di Napoli</td>
+            <td class="state-cell">
+              <button
+                class="btn-primary state-dropdown-btn d-flex align-items-center"
+              >
+                In attesa <i class="fa-solid fa-caret-down"></i>
+              </button>
+              <ul class="unstyled-list state-dropdown-list">
+                <li class="list-header">Stati</li>
+                <hr />
+                <li><button data-color="#f2de31">In attesa</button></li>
+                <li>
+                  <button data-color="#50b957">Approva de repsonsible</button>
+                </li>
+                <li>
+                  <button data-color="#f45564">
+                    Rigettato da responsablie
+                  </button>
+                </li>
+                <li>
+                  <button data-color="#008dcb">Inviato al celiente</button>
+                </li>
+                <li>
+                  <button data-color="#31a339">Approvato da cliente</button>
+                </li>
+                <li>
+                  <button data-color="#eb1a2d">Rigettato da cliente</button>
+                </li>
+              </ul>
+            </td>
+            <td><span>Mario Rossi</span></td>
+            <td>Mario Bianchi</td>
+            <td>23/03/2022</td>
+            <td>non approvato</td>
+            <td>-</td>
+            <td>
+              <button class="btn-primary attatch-btn">Allegati</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="icon-cell">
+              <button class="icon-cell-btn centerVH">
+                <i
+                  class="fa-regular centerVH dotted-icon bg-dark fa-md fa-ellipsis"
+                ></i>
+              </button>
+              <div class="dropdown">
+                <div class="list-header">
+                  <h2 class="opacity-30 fs-1">Altre opzioni</h2>
+                </div>
+                <hr />
+                <ul class="unstyled-list remove-scroll">
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                </ul>
+              </div>
+            </td>
+            <td>PR-52332656653</td>
+            <td>sogert s.p.a.</td>
+            <td>comune di Napoli</td>
+            <td class="state-cell">
+              <button
+                class="btn-primary state-dropdown-btn d-flex align-items-center"
+              >
+                In attesa <i class="fa-solid fa-caret-down"></i>
+              </button>
+              <ul class="unstyled-list state-dropdown-list">
+                <li class="list-header">Stati</li>
+                <hr />
+                <li><button data-color="#f2de31">In attesa</button></li>
+                <li>
+                  <button data-color="#50b957">Approva de repsonsible</button>
+                </li>
+                <li>
+                  <button data-color="#f45564">
+                    Rigettato da responsablie
+                  </button>
+                </li>
+                <li>
+                  <button data-color="#008dcb">Inviato al celiente</button>
+                </li>
+                <li>
+                  <button data-color="#31a339">Approvato da cliente</button>
+                </li>
+                <li>
+                  <button data-color="#eb1a2d">Rigettato da cliente</button>
+                </li>
+              </ul>
+            </td>
+            <td><span>Mario Rossi</span></td>
+            <td>Mario Bianchi</td>
+            <td>23/03/2022</td>
+            <td>non approvato</td>
+            <td>-</td>
+            <td>
+              <button class="btn-primary attatch-btn">Allegati</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="icon-cell">
+              <button class="icon-cell-btn centerVH">
+                <i
+                  class="fa-regular centerVH dotted-icon bg-dark fa-md fa-ellipsis"
+                ></i>
+              </button>
+              <div class="dropdown">
+                <div class="list-header">
+                  <h2 class="opacity-30 fs-1">Altre opzioni</h2>
+                </div>
+                <hr />
+                <ul class="unstyled-list remove-scroll">
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                  <li><a href="#">element</a></li>
+                </ul>
+              </div>
+            </td>
+            <td>PR-52332656653</td>
+            <td>sogert s.p.a.</td>
+            <td>comune di Napoli</td>
+            <td class="state-cell">
+              <button
+                class="btn-primary state-dropdown-btn d-flex align-items-center"
+              >
+                In attesa <i class="fa-solid fa-caret-down"></i>
+              </button>
+              <ul class="unstyled-list state-dropdown-list">
+                <li class="list-header">Stati</li>
+                <hr />
+                <li><button data-color="#f2de31">In attesa</button></li>
+                <li>
+                  <button data-color="#50b957">Approva de repsonsible</button>
+                </li>
+                <li>
+                  <button data-color="#f45564">
+                    Rigettato da responsablie
+                  </button>
+                </li>
+                <li>
+                  <button data-color="#008dcb">Inviato al celiente</button>
+                </li>
+                <li>
+                  <button data-color="#31a339">Approvato da cliente</button>
+                </li>
+                <li>
+                  <button data-color="#eb1a2d">Rigettato da cliente</button>
+                </li>
+              </ul>
+            </td>
+            <td><span>Mario Rossi</span></td>
+            <td>Mario Bianchi</td>
+            <td>23/03/2022</td>
+            <td>non approvato</td>
+            <td>-</td>
+            <td>
+              <button class="btn-primary attatch-btn">Allegati</button>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="11">
+              <div class="table-footer d-flex">
+                <div class="pagination-result">
+                  <span>Risultati per pagina</span>
+                  <span>20</span>
+                </div>
+                <div class="pagination-nums d-flex">
+                  <span><i class="fa-solid fa-caret-down"></i></span>
+                  <a href="#" class="active">1</a>
+                  <a href="#" class="">2</a>
+                  <span>...</span>
+                  <a href="#" class="">22</a>
+                  <a href="#" class="">23</a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <!-- ending table -->
+
+    <!-- Starting item details -->
+    <div class="overlay">
+      <section class="item-details">
+        <div class="d-flex justify-space-between my-2 upper centerV">
+          <div class="icon-left close-icon">
+            <i class="fa-solid fa-chevron-left"></i>
+          </div>
+          <a href="#">April il prevetivo con un'altro tab</a>
+        </div>
+        <div class="details d-flex justify-space-between my-2">
+          <div class="left">
+            <h1>Sogert S.p.a</h1>
+            <ul class="unstyled-list">
+              <li>IT534864546421</li>
+              <li>Via Napoli, 80010 Napoli (NA)</li>
+              <li>+201282848843</li>
+              <li>+201208804130</li>
+              <li>storex@gamil.com</li>
+            </ul>
+          </div>
+          <div class="right">
+            <ul class="unstyled-list">
+              <li>
+                <h1>N Preventivo <span>562354</span></h1>
+              </li>
+              <li>
+                <h1>Creato da <span>Mario Rossi</span></h1>
+              </li>
+              <li>
+                <h1>Approvato da: <span>Giuseppe Miragila</span></h1>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="hr-container"><hr /></div>
+        <section class="products-list d-flex">
+          <div class="table-container">
+            <h1 class="text-center">
+              Lista prodotti <i class="fa-solid fa-print"></i>
+            </h1>
+            <table class="products-table">
+              <thead>
+                <tr>
+                  <th>Azioni</th>
+                  <th>Prodotto</th>
+                  <th>Cordice prodotto Tipologia</th>
+                  <th>Categoria Servizio</th>
+                  <th>IVA sconto</th>
+                  <th>Prezzo netto Quantita</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="6 " class="td-address">
+                    Commessa N 20220630112016-62BD86F02
+                  </td>
+                </tr>
+                <tr>
+                  <td class="icons-cell text-center">
+                    <div
+                      class="icons-container filled-bullet line-left half-line-bottom"
+                    >
+                      <i class="centerVH fa-solid fa-ellipsis bg-dark"></i>
+                      <i class="centerVH fa-solid fa-caret-down bg-dark"></i>
+                    </div>
+                  </td>
+                  <td>tari -1 fg f</td>
+                  <td>tari22 combinato</td>
+                  <td>Postale servici stampe</td>
+                  <td>22% 0%</td>
+                  <td>1000,15 E</td>
+                </tr>
+                <tr>
+                  <td class="icons-cell text-center">
+                    <div class="icons-container line-left">
+                      <i class="centerVH fa-solid fa-ellipsis bg-dark"></i>
+                      <i class="centerVH fa-solid fa-caret-down bg-dark"></i>
+                    </div>
+                  </td>
+                  <td>tari -1 fg f</td>
+                  <td>tari22 combinato</td>
+                  <td>Postale servici stampe</td>
+                  <td>22% 0%</td>
+                  <td>1000,15 E</td>
+                </tr>
+                <tr>
+                  <td class="icons-cell text-center">
+                    <div class="icons-container line-left">
+                      <i class="centerVH fa-solid fa-ellipsis bg-dark"></i>
+                      <i class="centerVH fa-solid fa-caret-down bg-dark"></i>
+                    </div>
+                  </td>
+                  <td>tari -1 fg f</td>
+                  <td>tari22 combinato</td>
+                  <td>Postale servici stampe</td>
+                  <td>22% 0%</td>
+                  <td>1000,15 E</td>
+                </tr>
+                <tr>
+                  <td class="icons-cell text-center">
+                    <div class="icons-container line-left half-line-top">
+                      <i class="centerVH fa-solid fa-ellipsis bg-dark"></i>
+                      <i class="centerVH fa-solid fa-caret-down bg-dark"></i>
+                    </div>
+                  </td>
+                  <td>tari -1 fg f</td>
+                  <td>tari22 combinato</td>
+                  <td>Postale servici stampe</td>
+                  <td>22% 0%</td>
+                  <td>1000,15 E</td>
+                </tr>
+                <tr>
+                  <td class="icons-cell text-center">
+                    <div class="icons-container">
+                      <i class="centerVH fa-solid fa-ellipsis bg-dark"></i>
+                      <i class="centerVH fa-solid fa-caret-down bg-dark"></i>
+                    </div>
+                  </td>
+                  <td>tari -1 fg f</td>
+                  <td>tari22 combinato</td>
+                  <td>Postale servici stampe</td>
+                  <td>22% 0%</td>
+                  <td>1000,15 E</td>
+                </tr>
+                <tr>
+                  <td colspan="6" class="td-address">
+                    Commessa N 20220630112016-62BD86F02
+                  </td>
+                </tr>
+                <tr>
+                  <td class="icons-cell text-center">
+                    <div
+                      class="icons-container filled-bullet line-left half-line-bottom"
+                    >
+                      <i class="centerVH fa-solid fa-ellipsis bg-dark"></i>
+                      <i class="centerVH fa-solid fa-caret-down bg-dark"></i>
+                    </div>
+                  </td>
+                  <td>tari -1 fg f</td>
+                  <td>tari22 combinato</td>
+                  <td>Postale servici stampe</td>
+                  <td>22% 0%</td>
+                  <td>1000,15 E</td>
+                </tr>
+                <tr>
+                  <td class="icons-cell text-center">
+                    <div class="icons-container line-left">
+                      <i class="centerVH fa-solid fa-ellipsis bg-dark"></i>
+                      <i class="centerVH fa-solid fa-caret-down bg-dark"></i>
+                    </div>
+                  </td>
+                  <td>tari -1 fg f</td>
+                  <td>tari22 combinato</td>
+                  <td>Postale servici stampe</td>
+                  <td>22% 0%</td>
+                  <td>1000,15 E</td>
+                </tr>
+                <tr>
+                  <td class="icons-cell text-center">
+                    <div class="icons-container line-left">
+                      <i class="centerVH fa-solid fa-ellipsis bg-dark"></i>
+                      <i class="centerVH fa-solid fa-caret-down bg-dark"></i>
+                    </div>
+                  </td>
+                  <td>tari -1 fg f</td>
+                  <td>tari22 combinato</td>
+                  <td>Postale servici stampe</td>
+                  <td>22% 0%</td>
+                  <td>1000,15 E</td>
+                </tr>
+                <tr>
+                  <td class="icons-cell text-center">
+                    <div class="icons-container line-left half-line-top">
+                      <i class="centerVH fa-solid fa-ellipsis bg-dark"></i>
+                      <i class="centerVH fa-solid fa-caret-down bg-dark"></i>
+                    </div>
+                  </td>
+                  <td>tari -1 fg f</td>
+                  <td>tari22 combinato</td>
+                  <td>Postale servici stampe</td>
+                  <td>22% 0%</td>
+                  <td>1000,15 E</td>
+                </tr>
+                <tr>
+                  <td class="icons-cell text-center">
+                    <div class="icons-container">
+                      <i class="centerVH fa-solid fa-ellipsis bg-dark"></i>
+                      <i class="centerVH fa-solid fa-caret-down bg-dark"></i>
+                    </div>
+                  </td>
+                  <td>tari -1 fg f</td>
+                  <td>tari22 combinato</td>
+                  <td>Postale servici stampe</td>
+                  <td>22% 0%</td>
+                  <td>1000,15 E</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="6">_</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          <div class="checkout-section">
+            <h1 class="text-center">Azioni</h1>
+            <div class="border-left">
+              <div class="btns-container d-flex-column">
+                <button>Approva</button>
+                <button>Regetta</button>
+                <button>Modifica</button>
+              </div>
+              <h1 class="text-center">Rieplogo</h1>
+              <ul class="unstyled-list checkout-list">
+                <li class="d-flex justify-space-between my-2">
+                  <span>Competenze</span>
+                  <span class="text-blue">565,00 £</span>
+                </li>
+                <li class="d-flex justify-space-between my-2">
+                  <span>IVA <span class="text-blue">525</span></span>
+                  <span class="text-blue">115,50 £</span>
+                </li>
+                <li class="d-flex justify-space-between my-2">
+                  <span>total da pagare</span
+                  ><span class="text-blue">64,50 £</span>
+                </li>
+                <li class="d-flex justify-space-between my-2">
+                  <span>item</span> <span class="text-green">565£</span>
+                </li>
+                <li class="d-flex justify-space-between my-2">
+                  <span>item</span> <span class="text-orange">565£</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="information-section">
+          <button class="expand-controller">
+            <i class="fa-solid fa-caret-right"></i>Info aggiuntive
+          </button>
+          <div class="information-table-container remove-scroll">
+            <table class="information-table">
+              <tbody>
+                <tr>
+                  <td>Fatturazione</td>
+                </tr>
+                <tr>
+                  <td>Fatturaz</td>
+                  <td>Si</td>
+                  <td>Forza fatturazione</td>
+                  <td>Si</td>
+                </tr>
+                <tr>
+                  <td>Accettazione</td>
+                </tr>
+                <tr>
+                  <td>Data accettazone</td>
+                  <td>Si</td>
+                  <td>Data Accettazione</td>
+                  <td>
+                    <i class="fa-regular fa-calendar-days mr-sm"></i>12/3/1998
+                  </td>
+                </tr>
+                <tr>
+                  <td>Periodicaite</td>
+                  <td>Si</td>
+                </tr>
+                <tr>
+                  <td class="table-header">Richiesta d'ordine</td>
+                </tr>
+                <tr>
+                  <td>ODA</td>
+                  <td>
+                    <button class="btn-primary attatch-btn">Scarica</button>
+                  </td>
+                  <td>ODA data</td>
+                  <td>Valore</td>
+                </tr>
+                <tr>
+                  <td>TD allgato</td>
+                  <td>
+                    <button class="btn-primary attatch-btn">Scarica</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-header">Tempi di prodzione</td>
+                </tr>
+                <tr>
+                  <td>Elaborazione</td>
+                  <td>Da:Valore gg. | A: Valore gg.</td>
+                  <td>Stampa</td>
+                  <td>Da: Valore gg | A:valore egg.</td>
+                </tr>
+                <tr>
+                  <td>Inbustamento</td>
+                  <td>Da:Valore gg. | A: Valore gg.</td>
+                  <td>Stampa</td>
+                  <td>Da: Valore gg | A:valore egg.</td>
+                </tr>
+                <tr>
+                  <td>Personalizzato 1</td>
+                  <td>Da:Valore gg. | A: Valore gg.</td>
+                  <td>Stampa</td>
+                  <td>Da: Valore gg | A:valore egg.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="information-sections d-flex justify-space-between my-2">
+            <div>
+              <h1>Condiizoni</h1>
+              <div class="info-section centerV">
+                <div
+                  class="d-flex justify-space-between my-2 align-items-center"
+                >
+                  <p>
+                    <i
+                      class="mr-sm fa-regular fa-clipboard text-green fa-md"
+                    ></i>
+                    Contdizione sogert
+                  </p>
+                  <i class="fa-solid fa-xmark fa-xl text-red"></i>
+                </div>
+              </div>
+            </div>
+            <div class="mt-lg">
+              <h1>Note</h1>
+              <div class="info-section centerV">
+                <div
+                  class="d-flex justify-space-between my-2 align-items-center"
+                >
+                  <p>
+                    <i class="text-red fa-solid fa-notes-medical"></i>
+                    Contdizione sogert
+                  </p>
+                  <i class="fa-solid fa-xmark fa-xl text-red"></i>
+                </div>
+              </div>
+            </div>
+            <div class="mt-lg">
+              <h1>Elementi Personalizzato</h1>
+              <div class="info-section centerV">
+                <div
+                  class="d-flex justify-space-between my-2 align-items-center"
+                >
+                  <p>
+                    <i class="fa-regular fa-square-plus text-orange"></i>
+                    Contdizione sogert
+                  </p>
+                  <i class="fa-solid fa-xmark fa-xl text-red"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
